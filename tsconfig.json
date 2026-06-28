@@ -3,11 +3,16 @@
     "module": "commonjs",
     "target": "es2020",
     "outDir": "out",
-    "lib": ["es2020"],
-    "sourceMap": true,
     "rootDir": "src",
+
+    "lib": ["es2020"],
+    "types": ["node", "vscode"],
+
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    "sourceMap": true
   },
   "include": ["src"]
 }
