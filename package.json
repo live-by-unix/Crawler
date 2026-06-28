@@ -3,7 +3,7 @@
   "displayName": "Crawler",
   "description": "Agentic code scanner that finds bugs, generates fixes, and lets you apply patches.",
   "version": "1.0.0",
-  "publisher": "ab",
+  "publisher": "live-by-unix",
   "repository": {
     "type": "git",
     "url": "https://github.com/live-by-unix/Crawler.git"
