@@ -3,7 +3,7 @@
   "displayName": "Crawler",
   "description": "Agentic code scanner that finds bugs, generates fixes, and lets you apply patches.",
   "version": "1.0.0",
-  "publisher": "live-by-unix",
+  "publisher": "ab",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -19,37 +19,16 @@
   ],
   "contributes": {
     "commands": [
-      {
-        "command": "crawler.scan",
-        "title": "Crawler: Scan Workspace"
-      },
-      {
-        "command": "crawler.applyFix",
-        "title": "Crawler: Apply Selected Fix"
-      },
-      {
-        "command": "crawler.explainIssue",
-        "title": "Crawler: Explain Selected Issue"
-      },
-      {
-        "command": "crawler.addLocalProvider",
-        "title": "Crawler: Add Local Provider"
-      },
-      {
-        "command": "crawler.addApiProvider",
-        "title": "Crawler: Add API Provider"
-      },
-      {
-        "command": "crawler.benchmarkProviders",
-        "title": "Crawler: Benchmark Providers"
-      }
+      { "command": "crawler.scan", "title": "Crawler: Scan Workspace" },
+      { "command": "crawler.applyFix", "title": "Crawler: Apply Selected Fix" },
+      { "command": "crawler.explainIssue", "title": "Crawler: Explain Selected Issue" },
+      { "command": "crawler.addLocalProvider", "title": "Crawler: Add Local Provider" },
+      { "command": "crawler.addApiProvider", "title": "Crawler: Add API Provider" },
+      { "command": "crawler.benchmarkProviders", "title": "Crawler: Benchmark Providers" }
     ],
     "views": {
       "explorer": [
-        {
-          "id": "crawlerSidebar",
-          "name": "Crawler"
-        }
+        { "id": "crawlerSidebar", "name": "Crawler" }
       ]
     },
     "configuration": {
@@ -62,38 +41,14 @@
           "items": {
             "type": "object",
             "properties": {
-              "type": {
-                "type": "string",
-                "enum": ["local", "api"]
-              },
-              "port": {
-                "type": "number",
-                "description": "Local model port (for type=local)."
-              },
-              "model": {
-                "type": "string",
-                "description": "Model name."
-              },
-              "name": {
-                "type": "string",
-                "description": "API provider name (for type=api)."
-              },
-              "baseUrl": {
-                "type": "string",
-                "description": "Base URL for API provider."
-              },
-              "apiKey": {
-                "type": "string",
-                "description": "API key (optional)."
-              },
-              "headers": {
-                "type": "object",
-                "description": "Custom headers for API provider."
-              },
-              "params": {
-                "type": "object",
-                "description": "Extra params (temperature, max_tokens, etc.)."
-              }
+              "type": { "type": "string", "enum": ["local", "api"] },
+              "port": { "type": "number" },
+              "model": { "type": "string" },
+              "name": { "type": "string" },
+              "baseUrl": { "type": "string" },
+              "apiKey": { "type": "string" },
+              "headers": { "type": "object" },
+              "params": { "type": "object" }
             }
           }
         }
@@ -102,7 +57,7 @@
   },
   "main": "./out/extension.js",
   "scripts": {
-    "compile": "tsc -p .",
+    "compile": "npx tsc -p .",
     "build": "npm run compile && vsce package"
   },
   "dependencies": {
@@ -111,7 +66,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
-    "@types/vscode": "^1.125.0",
+    "@types/vscode": "1.80.0",
     "typescript": "^5.9.3"
   }
 }
