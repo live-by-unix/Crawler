@@ -4,6 +4,14 @@
   "description": "Agentic code scanner that finds bugs, generates fixes, and lets you apply patches.",
   "version": "1.0.0",
   "publisher": "ab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/live-by-unix/Crawler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/live-by-unix/Crawler/issues"
+  },
+  "homepage": "https://github.com/live-by-unix/Crawler#readme",
   "engines": {
     "vscode": "^1.80.0"
   },
