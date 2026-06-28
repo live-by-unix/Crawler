@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import * as vscode from "vscode";
-import { parsePatch, applyPatch } from "diff";
+
+
+const diff = require("diff");
 
 export function log(...args: any[]) {
   console.log("[Crawler]", ...args);
@@ -17,14 +19,17 @@ export function readFile(path: string): Promise<string> {
 
 export async function applyDiffToFile(filePath: string, diffText: string) {
   const original = await readFile(filePath);
-  const patches = parsePatch(diffText);
+
+  // Parse unified diff
+  const patches = diff.parsePatch(diffText);
 
   if (!patches.length) {
     vscode.window.showErrorMessage("Crawler: No patches found in diff.");
     return;
   }
 
-  const patched = applyPatch(original, patches[0]);
+  const patched = diff.applyPatch(original, patches[0]);
+
   if (!patched) {
     vscode.window.showErrorMessage("Crawler: Failed to apply patch.");
     return;
